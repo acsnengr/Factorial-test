@@ -1,9 +1,11 @@
 const myNumber = document.getElementById("myNumber"); //selects the number id for the myNumber variable
 const enter = document.getElementById("enter"); //selects the enter id for inputting the value in the input
+const resultElement = document.getElementById("result");
 //upon clicking the ENTER button, the eventlistener, listens if the enter button is clicked.
 //other syntax to use are click, dblclick, mousedown, mouseup, mouseenter, mouseleave, mouseover, mouseout, contextmenu
-enter.addEventListener("click", () => {
-  const inputValue = myNumber.value;
+
+function calculateFact() {
+  const inputValue = myFactorial.value;
   console.log("input value:", inputValue);
   let result = 1;
   //let i means selecting the variable inputValue for the for loop
@@ -16,7 +18,7 @@ enter.addEventListener("click", () => {
     // edge case condition
     result = 1;
     resultElement.textContent = result;
-  } else if (!myNumber.value) {
+  } else if (!myFactorial.value) {
     resultElement.textContent = "Please input a value";
     return;
   } else {
@@ -29,5 +31,13 @@ enter.addEventListener("click", () => {
     console.log(result);
 
     resultElement.textContent = result;
+  }
+}
+enterButton.addEventListener("click", calculateFact);
+
+myFactorial.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    //event.preventDefault();
+    calculateFact();
   }
 });

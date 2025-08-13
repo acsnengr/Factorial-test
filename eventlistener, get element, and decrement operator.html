@@ -6,46 +6,13 @@
     <title>factorial test</title>
   </head>
   <body>
-    <input type = "number" id = "myNumber" placeholder="input"></input>
-    <button id ="enter"
+    <input type = "number" id = "myFactorial" placeholder="input"></input>
+    <button id ="enterButton"
       onClick="
     "
     >ENTER</button>
-    <p type = "number" id ="result" placeholder="this is your result">placeholder</p>
-    <script>
-      const myNumber = document.getElementById('myNumber'); //selects the number id for the myNumber variable
-      const enter = document.getElementById('enter') //selects the enter id for inputting the value in the input
-      //upon clicking the ENTER button, the eventlistener, listens if the enter button is clicked.
-      //other syntax to use are click, dblclick, mousedown, mouseup, mouseenter, mouseleave, mouseover, mouseout, contextmenu
-      enter.addEventListener('click',() => { 
-        const inputValue = myNumber.value;
-        console.log("input value:" , inputValue);
-        let result = 1;
-        //let i means selecting the variable inputValue for the for loop
-       
-        const resultElement = document.getElementById('result');
-
-        //set resultElement as a variable for fetching result element id in DOM
-        //which will then be overwritten by these conditions
-        if (inputValue === 0){ // edge case condition
-          result = 1;
-          resultElement.textContent = result;
-        }else if (!myNumber.value) {
-          resultElement.textContent = "Please input a value";
-          return;
-        }
-        else {
-        // i > 1 simply states the condition for the loop
-        //i-- is a decrement operator  i++ is an increment operator
-        //the operator i-- means that it decreases by 1 for each loop until the condition i > 1 is false
-        for (let i = inputValue; i >= 1; i--) {
-          result *= i;
-          }
-          console.log(result);
-          
-          resultElement.textContent = result;
-        }
-      });
+    <p type = "number" id ="result" placeholder="this is your result">Calculate Your Factorial!</p>
+    <script src="script.js">
       
     </script>
   </body>

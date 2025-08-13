@@ -9,3 +9,9 @@ so if ever i forget these concepts or syntax someday
 i have this to lookback on
 
 with practice, this can be muscle memory
+
+note:
+
+always remember to use:
+html:5
+to construct initial boilerplate
